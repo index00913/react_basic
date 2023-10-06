@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
 import { useRef, useEffect, useState } from 'react';
@@ -44,7 +45,14 @@ export default function Contact() {
 		),
 	});
 
+	const setCenter = () => {
+		// 지도 중심을 이동 시킵니다
+		instance.current.setCenter(info.current[Index].latlng);
+	};
+
 	useEffect(() => {
+		//Index값이 변경될때마다 새로운 지도 레이어가 중첩되므로
+		//일단은 기존 map안의 모든 요소를 없애서 초기화
 		map.current.innerHTML = '';
 		//객체 정보를 활용한 지도 객체 생성
 		instance.current = new kakao.maps.Map(map.current, {
@@ -57,7 +65,8 @@ export default function Contact() {
 		//지도 타입 변경 UI추가
 		const mapTypeControl = new kakao.maps.MapTypeControl();
 		instance.current.addControl(mapTypeControl, kakao.maps.ControlPosition.BOTTOMLEFT);
-	}, [Index]);
+		window.addEventListener('resize', setCenter);
+	}, [Index]); //Index값이 변경될때마다 지도화면이 다시 갱신되어야 하므로 Index값을 의존성 배열에 등록
 
 	useEffect(() => {
 		//traffic 값이 바뀔때마다 실행될 구문
@@ -71,6 +80,8 @@ export default function Contact() {
 			<button onClick={() => setTraffic(!Traffic)}>
 				{Traffic ? '교통정보 끄기' : '교통정보 켜기'}
 			</button>
+
+			<button onClick={setCenter}>지도 위치 초기화</button>
 			<div className='map' ref={map}></div>
 
 			<ul>
