@@ -12,3 +12,13 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
+hrml {
+	&::-webkit-scrollbar {
+		width: 20px;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		background: #333;
+	}
+}
