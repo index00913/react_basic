@@ -45,6 +45,7 @@ export default function Contact() {
 	});
 
 	useEffect(() => {
+		map.current.innerHTML = '';
 		//객체 정보를 활용한 지도 객체 생성
 		instance.current = new kakao.maps.Map(map.current, {
 			center: info.current[Index].latlng,
@@ -56,7 +57,7 @@ export default function Contact() {
 		//지도 타입 변경 UI추가
 		const mapTypeControl = new kakao.maps.MapTypeControl();
 		instance.current.addControl(mapTypeControl, kakao.maps.ControlPosition.BOTTOMLEFT);
-	}, []);
+	}, [Index]);
 
 	useEffect(() => {
 		//traffic 값이 바뀔때마다 실행될 구문
@@ -71,6 +72,14 @@ export default function Contact() {
 				{Traffic ? '교통정보 끄기' : '교통정보 켜기'}
 			</button>
 			<div className='map' ref={map}></div>
+
+			<ul>
+				{info.current.map((el, idx) => (
+					<li className={Index === idx ? 'on' : ''} key={idx} onClick={() => setIndex(idx)}>
+						{el.title}
+					</li>
+				))}
+			</ul>
 		</Layout>
 	);
 }
