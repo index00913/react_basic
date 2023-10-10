@@ -1,6 +1,7 @@
 import Layout from '../../common/layout/Layout';
 import './Gallery.scss';
 import { useState, useEffect } from 'react';
+import Masonry from 'react-masonry-component';
 
 export default function Gallery() {
 	const [Pics, setPics] = useState([]);
@@ -21,28 +22,35 @@ export default function Gallery() {
 	return (
 		<Layout title={'Gallery'}>
 			<div className='picFrame'>
-				{Pics.map((data, idx) => {
-					return (
-						<article key={idx}>
-							<div className='inner'>
-								<img
-									className='pic'
-									src={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`}
-									alt={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_b.jpg`}
-								/>
-								<h2>{data.title}</h2>
-
-								<div className='profile'>
+				<Masonry
+					elementType={'div'} // default 'div'
+					options={{ transitionDuration: 0.5 }} // default {}
+					disableImagesLoaded={false} // default false
+					updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+				>
+					{Pics.map((data, idx) => {
+						return (
+							<article key={idx}>
+								<div className='inner'>
 									<img
-										src={`http://farm${data.farm}.staticflickr.com/${data.server}/buddyicons/${data.owner}.jpg`}
-										alt={data.owner}
+										className='pic'
+										src={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`}
+										alt={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_b.jpg`}
 									/>
-									<span>{data.owner}</span>
+									<h2>{data.title}</h2>
+
+									<div className='profile'>
+										<img
+											src={`http://farm${data.farm}.staticflickr.com/${data.server}/buddyicons/${data.owner}.jpg`}
+											alt={data.owner}
+										/>
+										<span>{data.owner}</span>
+									</div>
 								</div>
-							</div>
-						</article>
-					);
-				})}
+							</article>
+						);
+					})}
+				</Masonry>
 			</div>
 		</Layout>
 	);
