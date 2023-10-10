@@ -13,9 +13,13 @@ a {
 	color: inherit;
 }
 
-hrml {
+body {
+	background: #efefef;
+}
+
+html {
 	&::-webkit-scrollbar {
-		width: 20px;
+		width: 8px;
 	}
 	&::-webkit-scrollbar-thumb {
 		border-radius: 4px;
