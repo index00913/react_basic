@@ -1,17 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+
 .Youtube {
-	background: linear-gradient(-360deg, gray, lightgray);
-	.videoBox {
-		//
+	background: linear-gradient(-360deg, rgb(206, 206, 206), lightgray);
+
+	figure {
 	}
+
 	.content {
 		article {
 			width: 100%;
 			height: 40vh;
 			margin-bottom: 80px;
 			position: relative;
+			filter: grayscale(0.5);
 
 			&:hover {
 				transform: scale(1.05);
+				filter: grayscale(0);
 			}
 
 			.picBox {
@@ -21,6 +26,7 @@
 				top: 0px;
 				left: 0;
 				overflow: hidden;
+				box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 
 				img {
 					width: 100%;
@@ -38,6 +44,9 @@
 				left: 0;
 				bottom: 0;
 				top: 70%;
+				color: black;
+				margin-left: 20px;
+				font: normal 15px/1 'swap';
 			}
 		}
 	}
