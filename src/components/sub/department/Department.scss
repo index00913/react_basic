@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+
 .Department {
-	background-color: rgb(249, 249, 235);
 	figure {
-		background-color: rgb(105, 96, 96);
+		background-color: gray (105, 96, 96);
 	}
 	.memberBox {
 		justify-content: space-between;
-		background-color: rgb(222, 222, 205);
 		article {
 			width: 100%;
 			display: flex;
@@ -18,6 +18,12 @@
 
 			.imgBox {
 				width: 25%;
+				filter: grayscale(0.7);
+
+				&:hover {
+					filter: grayscale(0);
+					transform: scale(1.1);
+				}
 
 				img {
 					width: 100%;
@@ -47,6 +53,7 @@
 					font-size: 20px;
 					margin-bottom: 10px;
 					color: #555;
+					font: normal 20px/1 'Nanum Myeongjo';
 				}
 
 				p {

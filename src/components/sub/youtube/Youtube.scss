@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
 
 .Youtube {
-	background: linear-gradient(-360deg, rgb(206, 206, 206), black);
+	background: linear-gradient(180deg, rgb(206, 206, 206), gray);
 
 	figure {
 	}
@@ -13,9 +13,10 @@
 			margin-bottom: 80px;
 			position: relative;
 			filter: grayscale(0.5);
+			box-shadow: 10px 10px 20px (0, 0, 0, 0.9);
 
 			&:hover {
-				transform: scale(1.05);
+				transform: scale(0.9);
 				filter: grayscale(0);
 			}
 
