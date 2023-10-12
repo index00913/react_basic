@@ -1,61 +1,56 @@
 .Department {
+	background-color: rgb(249, 249, 235);
 	figure {
-		background-color: lightblue;
 	}
-
-	.historyBox {
-		margin: 100px 0px;
+	.memberBox {
+		justify-content: space-between;
+		background-color: rgb(222, 222, 205);
 		article {
 			width: 100%;
 			display: flex;
-			flex-wrap: wrap;
-			padding: 50px 0px;
-			justify-content: space-between;
-			position: relative;
+			justify-content: flex-start;
+			margin-bottom: 80px;
 
-			.line {
-				position: absolute;
-				top: 0;
-				left: 35%;
-				width: 1px;
-				height: 1px;
-				background: #555;
+			&:nth-of-type(even) {
+				flex-direction: row-reverse;
 			}
 
-			h2 {
-				width: 30%;
-				text-align: right;
-			}
-			ul {
-				width: 65%;
-				padding-left: 50px;
-			}
-		}
-	}
-
-	.memberBox {
-		width: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-
-		article {
-			width: 30%;
-			margin-bottom: 100px;
-
-			.pic {
-				width: 100%;
-				height: 30vw;
+			.imgBox {
+				width: 25%;
 
 				img {
 					width: 100%;
-					height: 100%;
+					height: 75%;
 					object-fit: cover;
+					padding-left: 20px;
+					padding-top: 20px;
+					padding-right: 20px;
 				}
 			}
+			.picBox {
+				margin-left: 20px;
+				width: 50%;
+				margin-right: 20px;
 
-			h2 {
-				margin-bottom: 10px;
+				h2 {
+					font-size: 40px;
+				}
+
+				h3 {
+					font-size: 20px;
+					color: blue;
+					margin-bottom: 10px;
+				}
+
+				h4 {
+					font-size: 20px;
+					margin-bottom: 10px;
+					color: #555;
+				}
+
+				p {
+					color: #555;
+				}
 			}
 		}
 	}

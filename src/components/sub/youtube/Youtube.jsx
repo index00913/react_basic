@@ -40,27 +40,31 @@ export default function Youtube() {
 	return (
 		<>
 			<Layout title={'Youtube'}>
-				{Youtube.map((data, idx) => {
-					const tit = data.snippet.title;
-					let desc = data.snippet.description;
-					let date = data.snippet.publishedAt;
-					return (
-						<article key={idx}>
-							<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
-							<p>{desc.length > 180 ? tit.substr(0, 180) + '...' : desc}</p>
-							<span>{date.split('T')[0].split('-').join('.')}</span>
-							<div
-								className='pic'
-								onClick={() => {
-									setIndex(idx);
-									setIsModal(true);
-								}}
-							>
-								<img src={data.snippet.thumbnails.standard.url} alt={data.title} />
-							</div>
-						</article>
-					);
-				})}
+				<div className='videoBox'>
+					{Youtube.map((data, idx) => {
+						const tit = data.snippet.title;
+						let desc = data.snippet.description;
+						let date = data.snippet.publishedAt;
+						return (
+							<article key={idx}>
+								<div
+									className='picBox'
+									onClick={() => {
+										setIndex(idx);
+										setIsModal(true);
+									}}
+								>
+									<img src={data.snippet.thumbnails.standard.url} alt={data.title} />
+								</div>
+								<div className='textBox'>
+									<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
+									<p>{desc.length > 180 ? tit.substr(0, 180) + '...' : desc}</p>
+									<span>{date.split('T')[0].split('-').join('.')}</span>
+								</div>
+							</article>
+						);
+					})}
+				</div>
 			</Layout>
 
 			{IsModal && (
