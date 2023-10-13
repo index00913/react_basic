@@ -152,31 +152,6 @@ export default function Contact() {
 	return (
 		<Layout title={'Contact'}>
 			<div className='content'>
-				<div id='mailBox'>
-					<form ref={form} onSubmit={sendEmail}>
-						<div className='upper'>
-							<span>
-								<label>Name</label>
-								<input type='text' name='user_name' className='nameEl' />
-							</span>
-							<span>
-								<label>Email</label>
-								<input type='email' name='user_email' className='emailEl' />
-							</span>
-						</div>
-
-						<div className='lower'>
-							<label>Message</label>
-							<textarea name='message' className='msgEl' />
-						</div>
-
-						<div className='btnSet'>
-							<input type='reset' value='Cancel' />
-							<input type='submit' value='Send' />
-						</div>
-					</form>
-				</div>
-
 				<div id='mapBox'>
 					<button onClick={() => setTraffic(!Traffic)}>
 						{Traffic ? '교통정보 끄기' : '교통정보 켜기'}
@@ -205,6 +180,62 @@ export default function Contact() {
 							</li>
 						))}
 					</ul>
+				</div>
+
+				<div id='mailBox'>
+					<form ref={form} onSubmit={sendEmail}>
+						<div className='upper'>
+							<span>
+								<label>Name</label>
+								<input type='text' name='user_name' className='nameEl' />
+							</span>
+						</div>
+						<div>
+							<span className='upper'>
+								<label>Email</label>
+								<input type='email' name='user_email' className='emailEl' />
+							</span>
+						</div>
+
+						<div className='lower'>
+							<label>Message</label>
+							<textarea name='message' className='msgEl' />
+						</div>
+
+						<div className='btnSet'>
+							<input type='reset' value='Cancel' />
+							<input type='submit' value='Send' />
+						</div>
+					</form>
+				</div>
+
+				<div className='textBox'>
+					<div class='text1'>
+						OUR ADRES <br />
+						<br />
+						123456 Moscow <br />
+						Lane Dyuzheva
+						<br />
+						building 47 office 202
+						<br />
+					</div>
+					<div class='text2'>
+						OUR CONTACTS
+						<br />
+						<br />
+						hello@name.com
+						<br />
+						+7 900 800 70 60
+					</div>
+					<nav class='others'>
+						<a href=''></a>
+						<a href=''></a>
+						<a href=''></a>
+						<a href=''></a>
+					</nav>
+					<div className='text3'>
+						<p>- follow us</p>
+					</div>
 				</div>
 			</div>
 		</Layout>
