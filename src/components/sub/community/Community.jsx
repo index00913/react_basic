@@ -108,8 +108,14 @@ export default function Community() {
 
 			<div className='showBox'>
 				{Posts.map((post, idx) => {
-					console.log(post.data);
-					const [year, month, date] = post.data.split('T')[0].split('-');
+					const string = JSON.stringify(post.data);
+
+					const [year, month, date] = string.split('T')[0].split('"')[1].split('-');
+
+					let [hour, min, sec] = string.split('T')[1].split('.')[0].split(':');
+					hour = parseInt(hour) + 9;
+					hour >= 24 && (hour = hour - 24);
+
 					if (post.enableUpdate) {
 						//수정 모드 렌더링
 						return (
@@ -145,7 +151,8 @@ export default function Community() {
 								<div className='txt'>
 									<h2>{post.title}</h2>
 									<p>{post.content}</p>
-									<p>{`${year}-${month}-${date}`}</p>
+									<p>{`글 작성일 : ${year}-${month}-${date}`}</p>
+									<p>{`글 작성시간 : ${hour}:${min}:${sec}`}</p>
 								</div>
 
 								<nav className='btnSet'>
@@ -160,20 +167,3 @@ export default function Community() {
 		</Layout>
 	);
 }
-
-/*
-  Create : 게시글 저장
-  Read : 게시글 보기
-  Update : 게시글 수정
-  Delete : 게시글 삭제
-
-  localStorage : 모든 브라우저가 가지고 있는 경량의 저장소 (문자열: 5MB)
-
-  로컬저장소에 데이터 저장
-  localStorage.setItem({key: 'value'}); 
-  객체를 문자화시켜서 저장
-
-  로컬저장소에 데이터 가져옴
-  localStorage.getItem(key)
-  문자화되어있는 객체를 다시 parsing해서 호출
-*/
