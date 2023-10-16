@@ -1,6 +1,25 @@
 @import '../../../styles/Variable.scss';
 
 .Gallery {
+	.searchBox {
+		button {
+			width: 100px;
+			background-color: #777;
+			color: white;
+			margin-left: 10px;
+		}
+	}
+
+	.btnSet {
+		button {
+			width: 100px;
+			background-color: #777;
+			color: white;
+			margin-right: 10px;
+			margin-top: 10px;
+		}
+	}
+
 	.loading {
 		position: fixed;
 		top: 50%;
@@ -37,6 +56,10 @@
 
 				.pic {
 					width: 100%;
+
+					&:hover {
+						transform: scale(1.1);
+					}
 				}
 				h2 {
 					font: normal 1rem/1.2 'arial';
@@ -49,6 +72,9 @@
 					display: flex;
 					align-items: center;
 					gap: 20px;
+					&:hover {
+						transform: scale(1.1);
+					}
 
 					span {
 						font-size: 0.8rem;
