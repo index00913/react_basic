@@ -10,6 +10,8 @@ export default function Members() {
 		email: '',
 		gender: false,
 		interests: false,
+		edu: '',
+		comments: '',
 	};
 	const [Val, setVal] = useState(initVal);
 	const [Errs, setErrs] = useState({});
@@ -82,6 +84,15 @@ export default function Members() {
 		//관심사인증
 		if (!value.interests) {
 			errs.interests = '관심사를 하나이상 체크해주세요.';
+		}
+
+		//학력 인증
+		if (!value.edu) {
+			errs.edu = '학력을 선택하세요.';
+		}
+		//남기는말 인증
+		if (value.comments.length < 10) {
+			errs.comments = '남기는말은 10글자 이상 입력하세요.';
 		}
 		return errs;
 	};
@@ -196,6 +207,41 @@ export default function Members() {
 									<label htmlFor='music'>music</label>
 									<input type='checkbox' id='music' name='interests' onChange={handleCheck} />
 									{Errs.interests && <p>{Errs.interests}</p>}
+								</td>
+							</tr>
+
+							{/* education */}
+							<tr>
+								<th>
+									<label htmlFor='edu'>Education</label>
+								</th>
+								<td>
+									<select name='edu' id='edu' onChange={handleChange}>
+										<option value=''>최종학력 선택하세요</option>
+										<option value='elementary-school'>초등학교 졸업</option>
+										<option value='middle-school'>중학교 졸업</option>
+										<option value='high-school'>고등학교 졸업</option>
+										<option value='college'>대학교 졸업</option>
+									</select>
+									{Errs.edu && <p>{Errs.edu}</p>}
+								</td>
+							</tr>
+
+							{/* comments */}
+							<tr>
+								<th>
+									<label htmlFor='comments'>comments</label>
+								</th>
+								<td>
+									<textarea
+										name='comments'
+										id=''
+										cols='30'
+										rows='3'
+										value={Val.comments}
+										onChange={handleChange}
+									></textarea>
+									{Errs.comments && <p>{Errs.comments}</p>}
 								</td>
 							</tr>
 
