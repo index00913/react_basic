@@ -1,22 +1,30 @@
-@import '../../../styles/Variable.scss';
-
 .Gallery {
 	.searchBox {
+		width: 50%;
 		button {
-			width: 100px;
-			background-color: #777;
+			width: 150px;
+			height: 30px;
+			border: none;
+			background-color: #555;
 			color: white;
 			margin-left: 10px;
+		}
+		input {
+			width: 150%;
+			height: 30px;
 		}
 	}
 
 	.btnSet {
 		button {
-			width: 100px;
-			background-color: #777;
+			width: 150px;
+			height: 30px;
+			background-color: #555;
+			border: none;
 			color: white;
 			margin-right: 10px;
 			margin-top: 10px;
+			cursor: pointer;
 		}
 	}
 
@@ -56,9 +64,11 @@
 
 				.pic {
 					width: 100%;
+					filter: grayscale(1);
 
 					&:hover {
 						transform: scale(1.1);
+						filter: grayscale(0);
 					}
 				}
 				h2 {
@@ -72,42 +82,17 @@
 					display: flex;
 					align-items: center;
 					gap: 20px;
+					filter: grayscale(1);
+
 					&:hover {
 						transform: scale(1.1);
+						filter: grayscale(0);
 					}
 
 					span {
 						font-size: 0.8rem;
 					}
 				}
-			}
-		}
-	}
-}
-@media screen and (max-width: $labtop) {
-	.Gallery {
-		.picFrame {
-			article {
-				width: 33.333%;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: $tablet) {
-	.Gallery {
-		.picFrame {
-			article {
-				width: 50%;
-			}
-		}
-	}
-}
-@media screen and (max-width: $mobile) {
-	.Gallery {
-		.picFrame {
-			article {
-				width: 100%;
 			}
 		}
 	}
