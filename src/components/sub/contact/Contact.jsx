@@ -215,11 +215,7 @@ export default function Contact() {
 					<div class='text1'>
 						OUR ADRES <br />
 						<br />
-						123456 Moscow <br />
-						Lane Dyuzheva
-						<br />
-						building 47 office 202
-						<br />
+						123456 Moscow Lane Dyuzheva
 					</div>
 					<div class='text2'>
 						OUR CONTACTS
