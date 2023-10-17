@@ -151,14 +151,16 @@ export default function Contact() {
 
 	return (
 		<Layout title={'Contact'}>
-			<div className='content'>
-				<div id='mapBox'>
-					<button onClick={() => setTraffic(!Traffic)}>
-						{Traffic ? '교통정보 끄기' : '교통정보 켜기'}
-					</button>
+			<div className='content1'>
+				<div className='mapBox'>
+					<div className='buttonBox'>
+						<button onClick={() => setTraffic(!Traffic)}>
+							{Traffic ? '교통정보 끄기' : '교통정보 켜기'}
+						</button>
 
-					<button onClick={setCenter}>지도 위치 초기화</button>
-					<button onClick={() => setIsMap(!IsMap)}>{IsMap ? '로드뷰보기' : '지도보기'}</button>
+						<button onClick={setCenter}>지도 위치 초기화</button>
+						<button onClick={() => setIsMap(!IsMap)}>{IsMap ? '로드뷰보기' : '지도보기'}</button>
+					</div>
 
 					<div className='container'>
 						<div className={`view ${IsMap ? '' : 'on'}`} ref={view}></div>
@@ -182,7 +184,7 @@ export default function Contact() {
 					</ul>
 				</div>
 
-				<div id='mailBox'>
+				<div className='mailBox'>
 					<form ref={form} onSubmit={sendEmail}>
 						<div className='upper'>
 							<span>

@@ -19,9 +19,13 @@
 
 		li {
 			a.active {
-				color: blue;
+				color: hotpink;
 			}
 		}
+	}
+
+	.bars {
+		display: none;
 	}
 }
 
@@ -33,14 +37,18 @@
 
 .header.sub {
 	h1 {
-		color: hotpink;
+		color: blue;
 	}
 }
 
-.tablet {
+.tablet,
+.mobile {
 	.header {
 		ul {
 			display: none;
+		}
+		.bars {
+			display: block;
 		}
 	}
 }

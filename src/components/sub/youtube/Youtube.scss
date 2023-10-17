@@ -10,11 +10,11 @@
 			height: 40vh;
 			margin-bottom: 80px;
 			position: relative;
-			filter: grayscale(0.5);
+			filter: grayscale(0.9);
 			box-shadow: 10px 10px 20px (0, 0, 0, 0.9);
 
 			&:hover {
-				transform: scale(0.9);
+				transform: scale(1.1);
 				filter: grayscale(0);
 			}
 
@@ -46,6 +46,48 @@
 				color: black;
 				margin-left: 20px;
 				font: normal 15px/1 'swap';
+			}
+		}
+	}
+}
+//tablet
+.tablet,
+.mobile {
+	.Youtube {
+		.content {
+			article {
+				flex-wrap: wrap;
+
+				&:nth-of-type(even) {
+					flex-direction: row;
+				}
+
+				.titBox {
+					width: 48%;
+				}
+				.conBox {
+					width: 48%;
+				}
+				.picBox {
+					width: 100%;
+					margin-top: 30px;
+				}
+			}
+		}
+	}
+}
+
+//mobile
+.mobile {
+	.Youtube {
+		.content {
+			article {
+				.titBox {
+					width: 100%;
+				}
+				.conBox {
+					width: 100%;
+				}
 			}
 		}
 	}

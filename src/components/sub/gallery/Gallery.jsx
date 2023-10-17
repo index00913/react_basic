@@ -131,7 +131,7 @@ export default function Gallery() {
 				{Loader && (
 					<img
 						className='loading'
-						src={`${process.env.PUBLIC_URL}/img/loading.gif`}
+						src={`${process.env.PUBLIC_URL}/img/loading5.gif`}
 						alt='loading'
 					/>
 				)}
