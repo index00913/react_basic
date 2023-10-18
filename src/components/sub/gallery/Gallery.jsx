@@ -10,6 +10,7 @@ import { open } from '../../../redux/modalSlice';
 export default function Gallery() {
 	const dispatch = useDispatch();
 	const Pics = useSelector((store) => store.flickr.data);
+	console.log(Pics);
 	const IsModal = useSelector((store) => store.modal.isOpen);
 	const refInput = useRef(null);
 	const refBtnSet = useRef(null);
