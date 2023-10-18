@@ -1,4 +1,5 @@
 import './styles/Global.scss';
+
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/common/header/Header';
 import Department from './components/sub/department/Department';
@@ -9,12 +10,20 @@ import Contact from './components/sub/contact/Contact';
 import Detail from './components/sub/youtube/Detail';
 import Community from './components/sub/community/Community';
 import Main from './components/main/mainWrap/Main';
-
 import { useMedia } from './hooks/useMedia';
+import { useEffect } from 'react';
+import { fetchYoutube } from './redux/youtubeSlice';
+import { fetchFlickr } from './redux/flickrSlice';
+import { useDispatch } from 'react-redux';
 
 function App() {
-	console.log(useMedia());
+	const dispatch = useDispatch();
 
+	useEffect(() => {
+		//컴포넌트 마운트시 fetchYoutbe가 반환한 action객체를 dispatch함수를 통해서 리듀서에 전달
+		dispatch(fetchYoutube());
+		dispatch(fetchFlickr({ type: 'user', id: '164021883@N04' }));
+	}, []);
 	return (
 		<main className={useMedia()}>
 			<Switch>
@@ -22,7 +31,6 @@ function App() {
 					<Header isMain={true} />
 					<Main />
 				</Route>
-
 				<Route path='/'>
 					<Header isMain={false} />
 				</Route>
@@ -37,4 +45,5 @@ function App() {
 		</main>
 	);
 }
+
 export default App;
