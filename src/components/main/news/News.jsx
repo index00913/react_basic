@@ -39,14 +39,15 @@ function News() {
 	}, []);
 
 	return (
-		<section className='news'>
+		<section className='news myScroll'>
 			<h2>News</h2>
 			<div className='box1'>
 				<>
 					<Swiper
 						slidesPerView={4}
-						spaceBetween={30}
+						spaceBetween={0}
 						centeredSlides={true}
+						loop={true}
 						pagination={{
 							clickable: true,
 						}}
@@ -73,6 +74,12 @@ function News() {
 							</SwiperSlide>
 							<SwiperSlide>
 								<img src='/img/code7.jpeg' alt='' />
+							</SwiperSlide>
+							<SwiperSlide>
+								<img src='/img/code8.jpeg' alt='' />
+							</SwiperSlide>
+							<SwiperSlide>
+								<img src='/img/code9.jpeg' alt='' />
 							</SwiperSlide>
 						</div>
 					</Swiper>
