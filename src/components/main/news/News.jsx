@@ -34,7 +34,6 @@ function News() {
 	const [Post, setPost] = useState(getLocalData());
 
 	useEffect(() => {
-		console.log(getLocalData());
 		setPost(getLocalData());
 	}, []);
 
