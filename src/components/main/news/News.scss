@@ -9,17 +9,15 @@
 		margin-bottom: 50px;
 	}
 	.box1 {
+		.mySwiper {
+			.Swipers {
+			}
+		}
 		img {
 			width: 210px;
 			object-fit: cover;
 			height: 350px;
 			margin-right: 10px;
-
-			&:hover {
-				transform: scale(1.1);
-				filter: grayscale(0);
-				transition: 0.5s;
-			}
 		}
 		.text1 {
 			border-top: 1px solid black;

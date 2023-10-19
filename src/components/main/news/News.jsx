@@ -1,5 +1,7 @@
 import './News.scss';
 import { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 function News() {
 	const dummyData = [
@@ -40,10 +42,39 @@ function News() {
 		<section className='news'>
 			<h2>News</h2>
 			<div className='box1'>
-				<img src='/img/code1.jpg' alt='' />
-				<img src='/img/code2.jpg' alt='' />
-				<img src='/img/code3.jpeg' alt='' />
-				<img src='/img/code4.jpeg' alt='' />
+				<>
+					<Swiper
+						slidesPerView={4}
+						spaceBetween={30}
+						centeredSlides={true}
+						pagination={{
+							clickable: true,
+						}}
+						className='mySwiper'
+					>
+						<SwiperSlide>
+							<img src='/img/code1.jpg' alt='' />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src='/img/code2.jpg' alt='' />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src='/img/code3.jpeg' alt='' />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src='/img/code4.jpeg' alt='' />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src='/img/code5.jpeg' alt='' />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src='/img/code6.jpeg' alt='' />
+						</SwiperSlide>
+						<SwiperSlide>
+							<img src='/img/code7.jpeg' alt='' />
+						</SwiperSlide>
+					</Swiper>
+				</>
 				<p className='text1'>1ST FW released</p>
 				<p className='text2'>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum blanditiis explicabo tempore
