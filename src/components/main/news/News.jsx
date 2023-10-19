@@ -52,27 +52,29 @@ function News() {
 						}}
 						className='mySwiper'
 					>
-						<SwiperSlide>
-							<img src='/img/code1.jpg' alt='' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='/img/code2.jpg' alt='' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='/img/code3.jpeg' alt='' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='/img/code4.jpeg' alt='' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='/img/code5.jpeg' alt='' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='/img/code6.jpeg' alt='' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='/img/code7.jpeg' alt='' />
-						</SwiperSlide>
+						<div className='Swipers'>
+							<SwiperSlide>
+								<img src='/img/code1.jpg' alt='' />
+							</SwiperSlide>
+							<SwiperSlide>
+								<img src='/img/code2.jpg' alt='' />
+							</SwiperSlide>
+							<SwiperSlide>
+								<img src='/img/code3.jpeg' alt='' />
+							</SwiperSlide>
+							<SwiperSlide>
+								<img src='/img/code4.jpeg' alt='' />
+							</SwiperSlide>
+							<SwiperSlide>
+								<img src='/img/code5.jpeg' alt='' />
+							</SwiperSlide>
+							<SwiperSlide>
+								<img src='/img/code6.jpeg' alt='' />
+							</SwiperSlide>
+							<SwiperSlide>
+								<img src='/img/code7.jpeg' alt='' />
+							</SwiperSlide>
+						</div>
 					</Swiper>
 				</>
 				<p className='text1'>1ST FW released</p>
