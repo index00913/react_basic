@@ -1,6 +1,7 @@
 import Anime from '../../../asset/anime';
 import './Btns.scss';
 import { useRef, useEffect, useState } from 'react';
+import { useThrottle } from '../../../hooks/useThrottle';
 
 function Btns() {
 	//ul요소를 담을 참조객체 생성
@@ -19,6 +20,7 @@ function Btns() {
 
 	//브라우저 스크롤시 버튼을 반복돌면서 스크롤이 특정 섹션영역을 넘어가면 해당 순번의 버튼 활성화 함수
 	const activation = () => {
+		console.log('activation called');
 		const btns = refBtns.current.querySelectorAll('li');
 		const scroll = window.scrollY;
 
@@ -30,14 +32,17 @@ function Btns() {
 		});
 	};
 
+	const throttledActivation = useThrottle(activation);
+	const throttledGetPos = useThrottle(getPos);
+
 	useEffect(() => {
 		getPos();
-		window.addEventListener('resize', getPos);
-		window.addEventListener('scroll', activation);
+		window.addEventListener('resize', throttledGetPos);
+		window.addEventListener('scroll', throttledActivation);
 
 		return () => {
-			window.removeEventListener('resize', getPos);
-			window.removeEventListener('scroll', activation);
+			window.removeEventListener('resize', throttledGetPos);
+			window.removeEventListener('scroll', throttledActivation);
 		};
 	}, []);
 	return (

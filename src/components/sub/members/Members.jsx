@@ -1,6 +1,6 @@
 import Layout from '../../common/layout/Layout';
 import './Members.scss';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Members() {
 	const initVal = {
@@ -117,6 +117,15 @@ export default function Members() {
 			setErrs(check(Val));
 		}
 	};
+
+	const showCheck = () => {
+		setErrs(check(Val));
+	};
+
+	useEffect(() => {
+		console.log('Val state값 변경에 의해서 showCheck함수 호출');
+		showCheck();
+	}, [Val]);
 
 	return (
 		<Layout title={'Members'}>
