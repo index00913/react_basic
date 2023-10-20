@@ -19,8 +19,10 @@ export default function Youtube() {
 						let date = data.snippet.publishedAt;
 						return (
 							<article key={idx}>
-								<div className='picBox' onClick={() => {}}>
-									<img src={data.snippet.thumbnails.standard.url} alt={data.title} />
+								<div className='picBox'>
+									<Link to={`/detail/${data.id}`}>
+										<img src={data.snippet.thumbnails.standard.url} alt={data.title} />
+									</Link>
 								</div>
 								<div className='textBox'>
 									<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
