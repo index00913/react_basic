@@ -8,8 +8,8 @@ export default function Members() {
 		pwd1: '',
 		pwd2: '',
 		email: '',
-		gender: false,
-		interests: false,
+		gender: '',
+		interests: [],
 		edu: '',
 		comments: '',
 	};
@@ -281,15 +281,24 @@ export default function Members() {
 								</tr>
 							</tbody>
 						</table>
+
+						<div className='box1'>
+							<img src='/img/members.jpeg' alt='' />
+							<div className='text1'>
+								<h2>Sign Up </h2>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus vitae ducimus
+									<br />
+									<br />
+									nostrum exercitationem nihil est dolorem aperiam deserunt a rerum nesciunt,
+									<br />
+									<br />
+									laboriosam, enim ipsum aspernatur quam odio aut ea at!
+								</p>
+							</div>
+						</div>
 					</div>
-					<div className='showBox'>
-						<h2>Lorem ipsum dolor sit amet.</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, ipsum ab vitae ullam
-							sed iste inventore ea nesciunt! Iusto assumenda eos ut veritatis eveniet. Aliquid quae
-							dignissimos architecto et libero!
-						</p>
-					</div>
+					<div></div>
 				</fieldset>
 			</form>
 		</Layout>

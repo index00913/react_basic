@@ -43,7 +43,7 @@ function News() {
 			<div className='box1'>
 				<>
 					<Swiper
-						slidesPerView={4}
+						slidesPerView={5}
 						spaceBetween={0}
 						centeredSlides={true}
 						loop={true}

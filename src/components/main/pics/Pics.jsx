@@ -51,20 +51,19 @@ function Pics() {
 		<section className='myScroll pics' ref={frame}>
 			<article ref={box}>
 				<div>
-					<h2>HELLO</h2>
 					<img src='/img/pic1.jpeg' alt='' />
+					<h2 className='YEAR'>2023</h2>
 				</div>
 
 				<div>
-					<h2>AND</h2>
 					<img src='/img/pic2.jpeg' alt='' />
+					<h2 className='NEW'>NEW</h2>
 				</div>
 				<div>
-					<h2>FUCK</h2>
 					<img src='/img/pic5.jpeg' alt='' />
+					<h2 className='VISION'>VISION</h2>
 				</div>
 				<div>
-					<h2>YOU</h2>
 					<img src='/img/pic6.jpeg' alt='' />
 				</div>
 			</article>

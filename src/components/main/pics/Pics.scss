@@ -2,6 +2,7 @@
 	width: 100%;
 	height: 400vw;
 	position: relative;
+	background-color: gray;
 
 	article {
 		width: 400vw;
@@ -18,6 +19,18 @@
 			align-items: center;
 			font-size: 10vw;
 			color: #fff;
+
+			.YEAR {
+				padding-left: 90px;
+			}
+
+			.NEW {
+				padding-left: 60px;
+			}
+
+			.VISION {
+				padding-left: 220px;
+			}
 
 			img {
 				width: 734px;
