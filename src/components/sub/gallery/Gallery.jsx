@@ -18,6 +18,7 @@ export default function Gallery() {
 	const [ActiveURL, setActiveURL] = useState('');
 	const [IsUser, setIsUser] = useState(true);
 	const my_id = '164021883@N04';
+	const [Opt, setOpt] = useState({ type: 'user', id: my_id });
 
 	//submit이벤트 발생시 실행할 함수
 	const handleSubmit = (e) => {
@@ -31,7 +32,7 @@ export default function Gallery() {
 			return alert('검색어를 입력하세요.');
 		}
 
-		dispatch(fetchFlickr({ type: 'search', tags: refInput.current.value }));
+		setOpt({ type: 'search', tags: refInput.current.value });
 		refInput.current.value = '';
 	};
 
@@ -44,7 +45,7 @@ export default function Gallery() {
 		btns.forEach((btn) => btn.classList.remove('on'));
 		e.target.classList.add('on');
 
-		dispatch(fetchFlickr({ type: 'user', id: my_id }));
+		setOpt({ type: 'user', id: my_id });
 	};
 
 	//Interest Gallery 클릭 이벤트 발생시 실행할 함수
@@ -56,13 +57,13 @@ export default function Gallery() {
 		btns.forEach((btn) => btn.classList.remove('on'));
 		e.target.classList.add('on');
 
-		dispatch(fetchFlickr({ type: 'interest' }));
+		setOpt({ type: 'interest' });
 	};
 
 	//profile 아이디 클릭시 실행할 함수
 	const handleClickProfile = (e) => {
 		if (IsUser) return;
-		dispatch(fetchFlickr({ type: 'user', id: e.target.innerText }));
+		setOpt({ type: 'user', id: e.target.innerText });
 		setIsUser(true);
 	};
 

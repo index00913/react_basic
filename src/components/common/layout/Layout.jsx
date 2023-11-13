@@ -8,7 +8,7 @@ export default function Layout({ title, children }) {
 		<section className={`layout ${title} `}>
 			<figure>
 				<div className='c1image'>
-					<img src='img/img3.jpg' />
+					<img src='../../../../img/img3.jpg' />
 				</div>
 			</figure>
 

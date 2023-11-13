@@ -1,8 +1,6 @@
-import { useSelector } from 'react-redux';
 import './Info.scss';
 
 function Info() {
-	const { data } = useSelector((store) => store.flickr);
 	return (
 		<section className='info myScroll'>
 			<div className='infoBox'>
@@ -43,7 +41,6 @@ function Info() {
 					</p>
 				</div>
 			</div>
-
 			<div className='infoBox2'>
 				<div className='imgBox2'>
 					<img src='/img/info3.jpeg' alt='' />
@@ -86,20 +83,6 @@ function Info() {
 						ipsum sint nihil!
 					</p>
 				</div>
-			</div>
-
-			<div className='wrap'>
-				{data.map((pic, idx) => {
-					if (idx >= 6) return null;
-					return (
-						<article key={idx}>
-							<img
-								src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_b.jpg`}
-								alt={pic.title}
-							/>
-						</article>
-					);
-				})}
 			</div>
 		</section>
 	);
